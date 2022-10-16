@@ -5,9 +5,6 @@ import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import style from "./Drawer.module.css";
 import mainLogo from "../../assets/Image/home/mainLogo.svg";
 import Home from "../../assets/Image/home/Home.png";
@@ -18,10 +15,11 @@ import My_Task from "../../assets/Image/home/myTask.png";
 import Alerts from "../../assets/Image/home/alert.png";
 import QR from "../../assets/Image/home/qr.png";
 import profile from "../../assets/Image/home/profile.svg";
-import logoutLine from "../../assets/Image/home/logout-line.png";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Dispatcher } from "../../Redux/Dispatcher";
+import CustomizedAccordions from "./Accordian";
+import AccountMenu from "./Menu";
 
 const drawerWidth = 250;
 
@@ -70,64 +68,6 @@ export default function TemporaryDrawer({
   setToggleDrawerMobile,
 }) {
   const Navigate = useNavigate();
-  const OnSideButtonClick = (Text) => {
-    switch (Text) {
-      case "Home":
-        return Navigate("/");
-      case "Add":
-        return Navigate("/registration");
-      case "Search":
-        return Navigate("/searchform");
-      case "List":
-        return Navigate("/list");
-      case "My Task":
-        return console.log("My Task");
-      case "Alerts":
-        return console.log("Alerts");
-      case "QR":
-        return console.log("QR");
-      case "Profile":
-        return Navigate("/profile");
-
-      default:
-        return console.log(Text);
-    }
-  };
-
-  const sideButtons = [
-    {
-      src: Home,
-      text: "Home",
-    },
-    {
-      src: add,
-      text: "Add",
-    },
-    {
-      src: Search,
-      text: "Search",
-    },
-    {
-      src: Lists,
-      text: "List",
-    },
-    {
-      src: My_Task,
-      text: "My Task",
-    },
-    {
-      src: Alerts,
-      text: "Alerts",
-    },
-    {
-      src: QR,
-      text: "QR",
-    },
-    {
-      src: profile,
-      text: "Profile",
-    },
-  ];
 
   const list = () => (
     <Box sx={{ width: 250, height: "100%" }} role="presentation">
@@ -136,31 +76,13 @@ export default function TemporaryDrawer({
           <ListItem
             key={index}
             disablePadding
-            onClick={() => OnSideButtonClick(item.text)}
-            sx={{ "&:hover": { bgcolor: "#163d64" }, margin: "2px 1px" }}
+            sx={{ "&:hover": { bgcolor: "#163d64" } }}
           >
-            <ListItemButton>
-              <ListItemIcon>
-                {
-                  <img
-                    src={item.src}
-                    alt="icn"
-                    width={"40px"}
-                    height={"40px"}
-                    style={{
-                      backgroundColor: "#ffffff",
-                      padding: 5,
-                      borderRadius: 8,
-                    }}
-                  />
-                }
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={{ marginLeft: "16px", color: "#ffffff" }}
-                primaryTypographyProps={{ fontSize: 20 }}
-              />
-            </ListItemButton>
+            {toggleDrawer ? (
+              <CustomizedAccordions item={item} index={index} />
+            ) : (
+              <AccountMenu item={item} index={index} />
+            )}
           </ListItem>
         ))}
       </List>
@@ -180,16 +102,6 @@ export default function TemporaryDrawer({
               Navigate("/");
             }}
           >
-            {/* <img
-              src={logoutLine}
-              alt="logout"
-              style={{
-                width: "20px",
-                height: "20px",
-                backgroundColor: "white",
-                marginRight: 5,
-              }}
-            /> */}
             LOG-OUT
           </Button>
         )}
@@ -243,3 +155,70 @@ export default function TemporaryDrawer({
     </>
   );
 }
+
+const sideButtons = [
+  {
+    src: Home,
+    text: "Home",
+    subtitle: [
+      {
+        src: Home,
+        title: "Admin",
+        onClick: () => {
+          console.log("admin");
+        },
+      },
+      {
+        src: Home,
+        title: "Student",
+        onClick: () => {
+          console.log("Student");
+        },
+      },
+    ],
+  },
+  {
+    src: add,
+    text: "Add",
+    subtitle: [
+      {
+        src: Home,
+        title: "Trail",
+        onClick: () => {
+          console.log("Trail");
+        },
+      },
+      {
+        src: Home,
+        title: "add trial",
+        onClick: () => {
+          console.log("add Trail");
+        },
+      },
+    ],
+  },
+  {
+    src: Search,
+    text: "Search",
+  },
+  {
+    src: Lists,
+    text: "List",
+  },
+  {
+    src: My_Task,
+    text: "My Task",
+  },
+  {
+    src: Alerts,
+    text: "Alerts",
+  },
+  {
+    src: QR,
+    text: "QR",
+  },
+  {
+    src: profile,
+    text: "Profile",
+  },
+];

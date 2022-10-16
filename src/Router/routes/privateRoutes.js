@@ -1,6 +1,5 @@
 import Dashboard from "../../pages/PrivatePage/Dashboard/Index";
 import List from "../../pages/PrivatePage/List/List";
-import OfflineData from "../../pages/PrivatePage/offlineData/OfflineData";
 import Profile from "../../pages/PrivatePage/Profile/Profile";
 import RegistraionForm from "../../pages/PrivatePage/RegistrationForm/RegistraionForm";
 import SearchForm from "../../pages/PrivatePage/SearchForm.js/SearchForm";
@@ -42,11 +41,6 @@ const PrivateRoute = [
     path: "/profile",
     exact: true,
     component: <Profile />,
-  },
-  {
-    path: "/offlinedata",
-    exact: true,
-    component: <OfflineData />,
   },
 ];
 

@@ -8,9 +8,7 @@ export const AuthContext = createContext();
 function AuthContextProvider({ children }) {
   const islogged = useSelector((state) => state.app.isLogged);
   console.log(islogged);
-  return (
-    <AuthContext.Provider value={islogged}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={true}>{children}</AuthContext.Provider>;
 }
 export default AuthContextProvider;
 
