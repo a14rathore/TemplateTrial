@@ -64,7 +64,12 @@ export default function AccountMenu({ item, index }) {
         anchorOrigin={{ horizontal: "right", vertical: "top" }}
       >
         {item.subtitle?.map((ele, i) => (
-          <MenuItem key={i} onClick={() => console.log(ele.title)}>
+          <MenuItem
+            key={i}
+            onClick={() => {
+              ele?.onClick();
+            }}
+          >
             <Avatar /> {ele.title}
           </MenuItem>
         ))}

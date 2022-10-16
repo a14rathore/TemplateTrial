@@ -121,7 +121,14 @@ export default function CustomizedAccordions({ item, index }) {
       <AccordionDetails>
         {item.subtitle?.map((ele, i) => (
           <div>
-            <Button key={i} variant="text" sx={{ color: "#FFF" }}>
+            <Button
+              key={i}
+              variant="text"
+              sx={{ color: "#FFF" }}
+              onClick={() => {
+                ele?.onClick();
+              }}
+            >
               {ele.title}
             </Button>
           </div>
