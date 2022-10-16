@@ -1,0 +1,23 @@
+.MainRoot {
+  width: 100%;
+}
+.MainContainer {
+  background-color: #f4f9fd;
+  height: calc(100vh - calc(100px + 56px));
+  overflow-y: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .repsonsiveness_content1 {
+    margin-left: 250px;
+    transition: all 0.4s;
+  }
+  .repsonsiveness_content2 {
+    margin-left: calc(64px + 12px);
+  }
+  .MainContainer {
+    background-color: #f4f9fd;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+}

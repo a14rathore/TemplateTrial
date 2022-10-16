@@ -1,0 +1,14 @@
+.mainContainer {
+  margin: 20px 20px;
+}
+.btnHeading {
+  display: flex;
+  align-items: center;
+}
+.btnHeading h3 {
+  color: #3990c0;
+}
+.formContianer {
+  margin-top: 26px;
+  margin-left: 36px;
+}

@@ -1,0 +1,28 @@
+.HeadermainContainer {
+  height: 60px;
+}
+.navbar {
+  box-shadow: 0px 0px 10px black;
+  height: 100%;
+}
+.navbar > ul {
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  background-color: #ffffff;
+  height: 100%;
+}
+.navbar > ul > li {
+  display: flex;
+  align-items: center;
+}
+.heading {
+  padding: 0px 16px;
+  margin-top: -4px;
+  text-align: center;
+  color: #5c7ba1;
+  font-weight: 700;
+  font-size: 18px;
+}

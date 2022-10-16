@@ -1,0 +1,61 @@
+.mainContainer {
+  height: 100vh;
+  display: flex;
+}
+.section1 {
+  background-color: #f4f9fd;
+  flex: 70%;
+}
+.section2 {
+  background-color: #00a1e5;
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+.loginCard {
+  width: 100%;
+  max-width: 350px;
+}
+.loginCard > h1 {
+  color: #00a1e5;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+}
+.field {
+  height: 83px;
+}
+.imgContainer {
+  padding: 50px;
+  border-radius: 50%;
+  border: 4px solid #bad1e4;
+  background-color: #f1f1f1;
+  position: absolute;
+  left: -120px;
+}
+.img {
+  height: 130px;
+  width: 130px;
+}
+
+@media only screen and (max-width: 769px) {
+  .mainContainer {
+    flex-direction: column-reverse;
+  }
+  .imgContainer {
+    left: auto;
+  }
+}

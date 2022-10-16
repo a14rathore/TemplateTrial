@@ -1,0 +1,30 @@
+.respoDrawer1 {
+  display: none;
+}
+.respoDrawer2 {
+  display: block;
+}
+.logoDiv {
+  display: block;
+  margin: 8px 0px;
+}
+.logoContainer {
+  text-align: center;
+  color: #fff;
+  margin-bottom: -12px;
+}
+.logoContainer > img {
+  object-fit: contain;
+  height: 65px;
+  padding: 8px 7px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+  .respoDrawer1 {
+    display: block;
+  }
+  .respoDrawer2 {
+    display: none;
+  }
+}
